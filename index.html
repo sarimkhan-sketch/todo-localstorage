@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>To-Do List</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%235b4bdb%22/><path d=%22M18 33l9 9 19-20%22 stroke=%22white%22 stroke-width=%227%22 fill=%22none%22/></svg>">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <h1>My Tasks</h1>
+    <form id="form" class="add" novalidate>
+      <label for="text" class="sr-only">New task</label>
+      <input id="text" type="text" maxlength="120" autocomplete="off" placeholder="What needs to be done?">
+      <button type="submit">Add</button>
+    </form>
+    <p id="error" class="error" role="alert"></p>
+
+    <div class="toolbar">
+      <div class="filters" role="group" aria-label="Show">
+        <button type="button" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" data-filter="active" aria-pressed="false">Active</button>
+        <button type="button" data-filter="done" aria-pressed="false">Done</button>
+      </div>
+      <p id="count" class="count" aria-live="polite"></p>
+    </div>
+
+    <ul id="list" class="list"></ul>
+    <p id="empty" class="empty"></p>
+
+    <div class="footer-actions">
+      <button type="button" id="clear-done" class="link">Clear completed</button>
+    </div>
+  </main>
+  <p class="note">Tasks are saved in this browser (localStorage) and stay after a reload.</p>
+</body>
+</html>
